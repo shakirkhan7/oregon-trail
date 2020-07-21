@@ -1,5 +1,5 @@
 class Wagon {
-    constructor (capacity, passengers){
+    constructor (capacity){
         this.capacity =capacity
         this.passengers = []
 
@@ -8,26 +8,24 @@ class Wagon {
         return (this.capacity-this.passengers.length)
     }
     join(traveler){
-        let capacity = 0;
         
-            if(this.getAvailableSeatCount() > 0)
-            {this.passengers.push(traveler)
+            if((this.capacity-this.passengers.length) > 0){
+            this.passengers.push(traveler)
             
             }
 
     }
         shouldQuarantine(){
-        let nowQuarantine = true
+        let nowQuarantine = false
         for(let QuarIndex=0; QuarIndex< this.passengers.length; QuarIndex++){
             if (this.passengers[QuarIndex].isHealthy === false){
-                nowQuarantine=true
+                nowQuarantine = true
             }
-        
         }
         return nowQuarantine
     } 
     totalFood (){
-       let allFood= 1
+       let allFood= 0
         for (let foodIndex = 0; foodIndex < this.passengers.length; foodIndex++) {
             allFood += this.passengers[foodIndex].food
             
