@@ -6,7 +6,7 @@ class Traveler {
 
     }
     hunt(){
-        this.food =2
+        this.food +=2
     }
     eat(){
         if (this.food > 0) {
